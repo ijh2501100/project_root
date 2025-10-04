@@ -2,7 +2,11 @@ def greet(name):
     return f"안녕하세요, {name}님!"
 
 def show_age(name, age):
-    return f"{name}님은 {age}세입니다."
+    try:
+        age_int = int(age)
+        return f"{name}님은 {age_int}세입니다."
+    except ValueError:
+        return "나이는 숫자로 입력해주세요."
 
 def main():
     name = input("이름을 입력하세요: ")
